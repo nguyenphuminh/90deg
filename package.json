@@ -1,0 +1,26 @@
+{
+  "name": "90deg",
+  "version": "0.1.0",
+  "description": "90deg is an OISC around vector dot product and addition",
+  "main": "90deg.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nguyenphuminh/90deg.git"
+  },
+  "keywords": [
+    "90deg",
+    "oisc",
+    "esolang",
+    "turing-complete",
+    "turing-tarpit"
+  ],
+  "author": "nguyenphuminh",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/nguyenphuminh/90deg/issues"
+  },
+  "homepage": "https://github.com/nguyenphuminh/90deg#readme"
+}
