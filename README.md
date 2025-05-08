@@ -4,7 +4,7 @@
 
 ## Basics
 
-Start off with a 3D (can be nD with n>2) vector s(a, b, c) as the original state. Each 90deg command takes up 6 parameters, with the first 3 params being the coordinates of the a vector, and the next 3 params being the coordinates of the b vector. Calculate dot product of s and a, if it is 0 (perpendicular), jump to the next command, otherwise add b to s and jump back to the start. It halts simply when all dot products are 0. Note that all values are unbounded signed integers.
+Start off with an nD vector (3D in this case) s(a, b, c) as the original state. Each 90deg command takes up 2n parameters (6 in this case), with the first n params being the coordinates of the a vector, and the next n params being the coordinates of the b vector. Calculate dot product of s and a, if it is 0 (perpendicular), jump to the next command, otherwise add b to s and jump back to the start. It halts simply when all dot products are 0 (no commands can be run) or enter an infinite loop. Note that all values are unbounded signed integers.
 
 For example, here is how to calculate 3+2:
 
@@ -26,7 +26,7 @@ s = (0, 0, 5)
 
 ## Turing completeness
 
-This essentially is a Minsky machine, thus turing-complete.
+This should behave like Fractran or section 14.2 Minsky machine, though I have not written a concrete proof for its turing completeness.
 
 ## VM
 
@@ -49,7 +49,7 @@ vm.run(
 );
 ```
 
-To make it nD, you can simply just increase the dimension of the s vector and the VM will adapt.
+To make it nD, you can simply increase the dimension of the s vector and the VM will adapt.
 
 ## Copyrights and License
 
