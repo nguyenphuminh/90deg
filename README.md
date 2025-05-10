@@ -4,18 +4,18 @@
 
 ## Basics
 
-Start off with an nD vector (3D in this case) s(a, b, c) as the original state. Each 90deg command takes up 2n parameters (6 in this case), with the first n params being the coordinates of the a vector, and the next n params being the coordinates of the b vector. Calculate dot product of s and a, if it is 0 (perpendicular), jump to the next command, otherwise add b to s and jump back to the start. It halts simply when all dot products are 0 (no commands can be run) or enter an infinite loop. Note that all values are unbounded signed integers.
+Start off with an nD vector (3D in this case) s(a, b, c) as the original state. Each 90deg command takes up 2n+1 parameters (7 in this case), with the first n params being the coordinates of the a vector, the next n params being the coordinates of the b vector, and the last param being a number d. Calculate dot product of s and a, if it is 0 (perpendicular), jump to the next command, otherwise add b to s and jump to command d. It halts simply when all dot products are 0 (no commands can be run) or enter an infinite loop. Note that all values are unbounded signed integers.
 
 For example, here is how to calculate 3+2:
 
 ```
 s = (3, 2, 0)
 
-(1, 0, 0) (-1, 0, 1)
-(0, 1, 0) (0, -1, 1)
+(1, 0, 0) (-1, 0, 1) 1
+(0, 1, 0) (0, -1, 1) 0
 ```
 
-Steps:
+State changes:
 ```
 s = (2, 2, 1)
 s = (1, 2, 2)
@@ -26,7 +26,7 @@ s = (0, 0, 5)
 
 ## Turing completeness
 
-This should behave like Fractran or section 14.2 Minsky machine, though I have not written a concrete proof for its turing completeness.
+This is an equivalent of the Minsky machine, so it should be turing complete.
 
 ## VM
 
@@ -41,10 +41,10 @@ vm.run(
     [ 3n, 2n, 0n ],
     // code
     [
-        1n, 0n, 0n, -1n, 0n, 1n,
-        0n, 1n, 0n, 0n, -1n, 1n
+        1n, 0n, 0n, -1n, 0n, 1n, 0n,
+        0n, 1n, 0n, 0n, -1n, 1n, 0n
     ],
-    // log after one iteration (not one command), default is true
+    // log per state change, default is true
     true
 );
 ```

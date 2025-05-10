@@ -5,8 +5,8 @@ vm.run(
     [ 3n, 2n, 4n, 0n ],
     // code
     [
-        1n, 0n, 0n, 0n, -1n, 0n, 0n, 1n,
-        0n, 1n, 0n, 0n, 0n, -1n, 0n, 1n,
-        0n, 0n, 1n, 0n, 0n, 0n, -1n, 1n
+        1n, 0n, 0n, 0n, -1n, 0n, 0n, 1n, 1n,
+        0n, 1n, 0n, 0n, 0n, -1n, 0n, 1n, 2n,
+        0n, 0n, 1n, 0n, 0n, 0n, -1n, 1n, 0n
     ]
 );

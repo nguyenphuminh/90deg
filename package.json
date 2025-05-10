@@ -1,6 +1,6 @@
 {
   "name": "90deg",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "90deg is an OISC around vector dot product and addition",
   "main": "90deg.js",
   "scripts": {
